@@ -1,0 +1,62 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the dbtng_example module.
+ */
+
+/**
+ * Implements hook_schema().
+ *
+ * Defines the database tables used by this module.
+ *
+ * @see hook_schema()
+ *
+ * @ingroup contactus_forms
+ */
+function event_forms_schema() {
+  $schema['event_users'] = [
+    'description' => 'Stores data for contact us form',
+    'fields' => [
+      'jid' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique ID.',
+      ],
+      'full_name' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'Full name.',
+      ],
+      'email' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'Email.',
+      ],
+      'phone' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'Phone.',
+      ],
+      'address' => [
+        'type' => 'text',
+        'not null' => TRUE,
+        'description' => 'Address',
+      ],
+      'remarks' => [
+        'type' => 'text',
+        'not null' => TRUE,
+        'description' => 'Remarks',
+      ],
+    ],
+    'primary key' => ['jid'],
+  ];
+
+  return $schema;
+}

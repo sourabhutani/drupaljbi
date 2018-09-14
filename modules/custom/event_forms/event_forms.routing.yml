@@ -1,0 +1,7 @@
+event_forms.open_modal_form:
+  path: '/modal_form/{event_id}/{event_title}'
+  defaults:
+    _title: 'Participate Form'
+    _controller: '\Drupal\event_forms\Controller\ApplyController::openModalForm'
+  requirements:
+    _permission: 'access content'

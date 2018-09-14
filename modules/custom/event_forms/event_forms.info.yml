@@ -1,0 +1,6 @@
+name: Events forms
+type: module
+description: 'Event forms for use in participate event'
+package: Example
+version: VERSION
+core: 8.x
